@@ -133,9 +133,8 @@
                         color: white;
                         background: #003399;
                     }
-                    &:active{
-
-                    }
+                    //&:active{
+                    //}
                 }
             }
         }
