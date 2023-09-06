@@ -1,6 +1,6 @@
 <template>
  <header>
-  <div class="logo">
+  <div class="logo" @click="goToHome()">
     <img src="../assets/images/logo.png"/>
   </div>
   <div class="routes" v-if="!isMobile">
@@ -20,7 +20,7 @@
   </div>
   <div class="burger" v-if="isMobile" @click="menuOpen = !menuOpen">
     <div class="burger__icon" :class="{menuOpen: menuOpen}"></div>
-    <div class="burger__menu" v-if="menuOpen">
+    <div class="burger__menu" v-show="menuOpen">
       <router-link class="routes__home" to="/">Home</router-link>
       <router-link class="routes__services" to="/services">Services</router-link>
       <router-link class="routes__contact" to="/contact">Contact</router-link>
@@ -40,13 +40,18 @@
 </template>
 <script setup lang="ts">
 import { computed , onMounted, ref } from 'vue'
+import { useRouter } from "vue-router";
 import type { Ref } from 'vue'
 let flagsAreVisible:Ref<boolean> = ref(false)
 let windowWidth:Ref<number> = ref(innerWidth)
 let menuOpen:Ref<boolean> = ref(false)
+const router = useRouter()
 const isMobile = computed(() => {
     return windowWidth.value <= 700
 })
+function goToHome(): void{
+  router.push('/')
+}
 onMounted(() => {
   window.addEventListener('resize', () => {
     windowWidth.value = window.innerWidth
@@ -81,6 +86,7 @@ onMounted(() => {
       display: flex;      
       align-items: center;
       height: 100%;
+      cursor: pointer;
       img{
         height: 100%;
         @media(max-width:600px) {
@@ -192,19 +198,30 @@ onMounted(() => {
         right:0;
         top:100%;
         width: 100px;
+        background-color: rgba(0, 0, 0, 0.562);
+        backdrop-filter: blur(5px);
         a{
           display: flex;
           align-items: center;
           text-decoration: none;
+          text-align: center;
+          justify-content: center;
           color: white;
-          height: 40px;
-          padding: 5px;
+          height: 60px;
+          width: 100%;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.164);
+          &.active-link,      
+          &:hover{
+            background-color: #00339993;
+            color: white;
+          }
         }
       }
       &__flag{
         display: flex;
         justify-content: center;
         width: 100%;
+        padding: 15px;
         img{
           width: 50px;
         }

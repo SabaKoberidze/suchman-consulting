@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="services">
-            <div v-for="(service, key) in servicesStore.services" class="service">
+            <div v-for="(service, key, index) in servicesStore.services" class="service" @click="pickService(index)">
                 <img :src="getImageUrl(key)">
                 <p class="title">{{ service.title }}</p>
                 <p class="description">{{ service.description }}</p>
@@ -19,13 +19,20 @@
     </article>
 </template>
 <script lang="ts" setup>
+    import { useRouter } from "vue-router";
     import { services } from "../stores/services";
+    const router = useRouter();
     const servicesStore = services();
     function getImageUrl(image: string): string {
-    let relativePath: string = `../assets/images/services/${image}`
-    let fullPath: URL = new URL(relativePath, import.meta.url)
-    return fullPath.pathname + '.png'
+        let relativePath: string = `../assets/images/services/${image}`
+        let fullPath: URL = new URL(relativePath, import.meta.url)
+        return fullPath.pathname + '.png'
     }
+    function pickService(index: number): void {  
+        servicesStore.pageindex = index
+        router.push('/services')
+    }
+
 </script>
 <style lang="scss" scoped>
     article{
@@ -107,22 +114,24 @@
                 }
                 button{
                     cursor: pointer;
-                    border-radius: 5px;
+                    border-radius: 5px 5px 0 0;
                     margin-top: auto;
                     border: 0;
                     outline: 0;
                     padding: 5px 15px;
-                    background: white;
+                    background: rgba(255, 255, 255, 0.945);
+                    color: rgba(0, 0, 0, 0.788);                    
                     transition: 200ms;
                     font-size: 14px;
+                    font-weight: 500;
+                    transform: translateY(15px);
+                    display: none;
                     @media(max-width:600px) {
                         font-size: 2.5vw;
                     } 
                     &:hover{
                         color: white;
                         background: #003399;
-                        padding: 5px 25px;
-                        border-radius: 15px;
                     }
                     &:active{
 
