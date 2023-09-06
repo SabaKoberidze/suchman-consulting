@@ -1,12 +1,12 @@
 <template>
     <div>
         <div class="navigation">
-            <div v-for="(service, data, index) in servicesStore.services" :class="{'active': pickedService === index}" @click ="pickService(index)">
+            <div v-for="(service,, index) in servicesStore.services" :class="{'active': pickedService === index}" @click ="pickService(index)">
                 <p>{{service.title}}</p>
             </div>        
         </div>
         <article> 
-            <template  v-for="(service, data, index) in servicesStore.services">
+            <template  v-for="(service,, index) in servicesStore.services">
                     <div class="serviceBody" v-if="pickedService === index">
                         <div class="texts">
                             <p class="mainText">{{service.serviceInfo.mainHeader}}</p>
