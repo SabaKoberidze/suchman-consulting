@@ -25,8 +25,8 @@
     const servicesStore = services();
     function getImageUrl(image: string): string {
         let relativePath: string = `../assets/images/services/${image}`
-        let fullPath: URL = new URL(relativePath, import.meta.url)
-        return fullPath.pathname + '.png'
+        let fullPath: string = new URL(relativePath, import.meta.url).href
+        return fullPath + '.png'
     }
     function pickService(index: number): void {  
         servicesStore.pageindex = index
