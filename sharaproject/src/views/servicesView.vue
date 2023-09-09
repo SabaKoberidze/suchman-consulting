@@ -16,10 +16,10 @@
                             </div>
                         </div>
                         <div class="images">
-                            <img v-if="service.title === 'Geodesy'" src="../assets/images/services/description/geodesy.jpg"/>
-                            <img v-if="service.title === 'Geology'" src="../assets/images/services/description/geology.jpg"/>
-                            <img v-if="service.title === 'Geophysics'" src="../assets/images/services/description/geophysics.jpg"/>
-                            <img v-if="service.title === 'Geophysics'" src="../assets/images/services/description/geophysics2.jpg"/>
+                            <img v-if="service.title === 'Geodesy'" src="../assets/images/services/geodesy.jpg"/>
+                            <img v-if="service.title === 'Geology'" src="../assets/images/services/geology.jpg"/>
+                            <img v-if="service.title === 'Geophysics'" src="../assets/images/services/geophysics.jpg"/>
+                            <img v-if="service.title === 'Geophysics'" src="../assets/images/services/geophysics2.jpg"/>
                         </div>                    
                     </div>
                 </template>

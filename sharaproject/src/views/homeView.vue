@@ -24,7 +24,7 @@
     const router = useRouter();
     const servicesStore = services();
     function getImageUrl(image: string): string {
-        let relativePath: string = `../assets/images/services/${image}`
+        let relativePath: string = `../../public/${image}`
         let fullPath: string = new URL(relativePath, import.meta.url).href
         return fullPath + '.png'
     }
