@@ -24,7 +24,7 @@
     const router = useRouter();
     const servicesStore = services();
     function getImageUrl(image: string): string {
-        let relativePath: string = `./public/${image}`        
+        let relativePath: string = `./${image}`        
         return relativePath + '.png'
     }
     function pickService(index: number): void {  
