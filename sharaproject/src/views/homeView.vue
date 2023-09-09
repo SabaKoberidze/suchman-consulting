@@ -12,8 +12,7 @@
             <div v-for="(service, key, index) in servicesStore.services" class="service" @click="pickService(index)">
                 <img :src="getImageUrl(key)">
                 <p class="title">{{ service.title }}</p>
-                <p class="description">{{ service.description }}</p>
-                
+                <p class="description">{{ service.description }}</p>               
                 <button>OPEN</button>
             </div>
         </div>
@@ -25,9 +24,8 @@
     const router = useRouter();
     const servicesStore = services();
     function getImageUrl(image: string): string {
-        let relativePath: string = `../../public/${image}`
-        let fullPath: string = new URL(relativePath, import.meta.url).href
-        return fullPath + '.png'
+        let relativePath: string = `./public/${image}`        
+        return relativePath + '.png'
     }
     function pickService(index: number): void {  
         servicesStore.pageindex = index
