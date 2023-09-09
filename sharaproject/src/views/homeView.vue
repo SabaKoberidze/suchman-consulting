@@ -13,6 +13,7 @@
                 <img :src="getImageUrl(key)">
                 <p class="title">{{ service.title }}</p>
                 <p class="description">{{ service.description }}</p>
+                
                 <button>OPEN</button>
             </div>
         </div>
