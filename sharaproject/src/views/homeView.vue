@@ -3,9 +3,7 @@
         <div class="landingPage">
             <div class="landingPage__intro">
                 <img src="../assets/images/logo.png"/>
-                <p>
-                    Your Trusted Partner in Geosciences and Geoservices
-                </p>
+                <p>{{$t('intro')}}</p>
             </div>
         </div>
         <div class="services">
@@ -20,7 +18,7 @@
 </template>
 <script lang="ts" setup>
     import { useRouter } from "vue-router";
-    import { services } from "../stores/services";
+    import { services } from "../stores/services";   
     const router = useRouter();
     const servicesStore = services();
     function getImageUrl(image: string): string {
@@ -31,7 +29,6 @@
         servicesStore.pageindex = index
         router.push('/services')
     }
-
 </script>
 <style lang="scss" scoped>
     article{
@@ -49,7 +46,7 @@
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-                background-color: rgba(0, 0, 0, 0.212);
+                background-color: rgba(0, 0, 0, 0.301);
                 backdrop-filter:blur(3px);
                 width: 500px;
                 border-radius: 5px;              
@@ -59,7 +56,7 @@
                 p{               
                     max-width: 80%;  
                     font-size: 18px;
-                    color:  rgba(214, 214, 214, 0.877);
+                    color:  rgba(214, 214, 214, 0.815);
                     font-weight: 400;
                     display:flex;
                     justify-content: center;

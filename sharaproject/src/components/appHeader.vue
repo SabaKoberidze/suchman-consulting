@@ -4,16 +4,18 @@
     <img src="../assets/images/logo.png"/>
   </div>
   <div class="routes" v-if="!isMobile">
-    <router-link class="routes__home" to="/">Home</router-link>
-    <router-link class="routes__services" to="/services">Services</router-link>
-    <router-link class="routes__contact" to="/contact">Contact</router-link>
+    <router-link class="routes__home" to="/">{{$t('Home')}}</router-link>
+    <router-link class="routes__services" to="/services">{{$t('Services')}}</router-link>
+    <router-link class="routes__contact" to="/contact">{{$t('Contact')}}</router-link>
     <div class="routes__flag">
-      <img @click="flagsAreVisible = !flagsAreVisible" src="../assets/images/flags/georgia.png"/>
+      <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'GE'" src="../assets/images/flags/georgia.png"/>
+      <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'EN'" src="../assets/images/flags/america.png"/>
+      <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'DE'" src="../assets/images/flags/germany.png"/>
       <Transition name="lang">
         <div class="routes__flag__languages" v-show="flagsAreVisible">
-          <img src="../assets/images/flags/georgia.png"/>
-          <img src="../assets/images/flags/america.png"/>
-          <img src="../assets/images/flags/germany.png"/>
+          <img @:click="changeLang('GE')" src="../assets/images/flags/georgia.png"/>
+          <img @:click="changeLang('EN')" src="../assets/images/flags/america.png"/>
+          <img @:click="changeLang('DE')" src="../assets/images/flags/germany.png"/>
         </div>
       </Transition>
     </div>
@@ -42,6 +44,11 @@
 import { computed , onMounted, ref } from 'vue'
 import { useRouter } from "vue-router";
 import type { Ref } from 'vue'
+import { settings } from '../stores/settings';
+import i18n from '../plugins/i18n';
+import { services } from '../stores/services';
+let settingsStore = settings()
+let serviceStore = services()
 let flagsAreVisible:Ref<boolean> = ref(false)
 let windowWidth:Ref<number> = ref(innerWidth)
 let menuOpen:Ref<boolean> = ref(false)
@@ -55,10 +62,14 @@ function goToHome(): void{
 onMounted(() => {
   window.addEventListener('resize', () => {
     windowWidth.value = window.innerWidth
-    console.log(isMobile.value)
   })
 })
-
+function changeLang(lang: string){
+  document.cookie = `locale=${lang}`
+  settingsStore.locale = lang
+  i18n.global.locale = settingsStore.locale as any;
+  serviceStore.setNewLocale();
+}
 </script>
 <style lang="scss" scoped>
   .lang-enter-active,
