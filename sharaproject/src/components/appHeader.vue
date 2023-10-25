@@ -20,24 +20,25 @@
       </Transition>
     </div>
   </div>
-  <div class="burger" v-if="isMobile" @click="menuOpen = !menuOpen">
-    <div class="burger__icon" :class="{menuOpen: menuOpen}"></div>
+  <div class="burger" v-if="isMobile" v-on:click.prevent.self="showBurgerDropdown()">
+    <div class="burger__icon" :class="{menuOpen: menuOpen}" v-on:click.prevent.self="showBurgerDropdown()"></div>
     <div class="burger__menu" v-show="menuOpen">
       <router-link class="routes__home" to="/">Home</router-link>
       <router-link class="routes__services" to="/services">Services</router-link>
       <router-link class="routes__contact" to="/contact">Contact</router-link>
-      <div class="burger__flag">
-        <img @click="flagsAreVisible = !flagsAreVisible" src="../assets/images/flags/georgia.png"/>
-        <!-- <Transition name="lang">
-          <div class="routes__flag__languages" v-if="flagsAreVisible">
-            <img src="../assets/images/flags/georgia.png"/>
-            <img src="../assets/images/flags/america.png"/>
-            <img src="../assets/images/flags/germany.png"/>
-          </div>
-        </Transition> -->
-      </div>
+      <div class="burger__flag" @click="showFlagsMobile = !showFlagsMobile">
+        <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'GE'" src="../assets/images/flags/georgia.png"/>
+        <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'EN'" src="../assets/images/flags/america.png"/>
+        <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'DE'" src="../assets/images/flags/germany.png"/>
+      </div>  
+      <div class="LanguagesMobile" v-if="showFlagsMobile">
+        <img @:click="changeLang('GE')" src="../assets/images/flags/georgia.png"/>
+        <img @:click="changeLang('EN')" src="../assets/images/flags/america.png"/>
+        <img @:click="changeLang('DE')" src="../assets/images/flags/germany.png"/>
+      </div>  
   </div>
   </div>
+  
 </header>
 </template>
 <script setup lang="ts">
@@ -50,6 +51,7 @@ import { services } from '../stores/services';
 let settingsStore = settings()
 let serviceStore = services()
 let flagsAreVisible:Ref<boolean> = ref(false)
+let showFlagsMobile:Ref<boolean> = ref(false)
 let windowWidth:Ref<number> = ref(innerWidth)
 let menuOpen:Ref<boolean> = ref(false)
 const router = useRouter()
@@ -69,6 +71,12 @@ function changeLang(lang: string){
   settingsStore.locale = lang
   i18n.global.locale = settingsStore.locale as any;
   serviceStore.setNewLocale();
+}
+function showBurgerDropdown(){
+  menuOpen.value = !menuOpen.value;
+  if(!menuOpen.value){
+    showFlagsMobile.value = false
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -159,6 +167,7 @@ function changeLang(lang: string){
     
     }
     .burger{
+    
       cursor: pointer;
       min-width: 100px;
       height: 100%;
@@ -227,16 +236,30 @@ function changeLang(lang: string){
             color: white;
           }
         }
+        .LanguagesMobile{
+          border-top: 1px solid rgba(255, 255, 255, 0.164);
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: 100%;        
+          padding: 20px;
+          gap: 10px;
+          img{
+            width: 100%;
+          }
+        }
       }
       &__flag{
         display: flex;
         justify-content: center;
         width: 100%;
         padding: 15px;
+        max-height: 60px;
         img{
           width: 50px;
         }
       }
     }
+    
   }
 </style>

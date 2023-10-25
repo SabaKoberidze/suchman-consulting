@@ -11,15 +11,15 @@
                         <div class="texts">
                             <p class="mainText">{{service.serviceInfo.mainHeader}}</p>
                             <div v-for="(data, index) in service.serviceInfo.headers">
-                                <p class="title">{{data}}</p>               
+                                <p class="title" v-if="data">{{data}}</p>               
                                 <p class="description" v-for="(data) in service.serviceInfo.articles[index]">{{data}}</p>           
                             </div>
                         </div>
                         <div class="images">
-                            <img v-if="service.title === 'Geodesy'" src="../assets/images/services/geodesy.jpg"/>
-                            <img v-if="service.title === 'Geology'" src="../assets/images/services/geology.jpg"/>
-                            <img v-if="service.title === 'Geophysics'" src="../assets/images/services/geophysics.jpg"/>
-                            <img v-if="service.title === 'Geophysics'" src="../assets/images/services/geophysics2.jpg"/>
+                            <img v-if="pickedService ===  3" src="../assets/images/services/geodesy.jpg"/>
+                            <img v-if="pickedService ===  2" src="../assets/images/services/geology.jpg"/>
+                            <img v-if="pickedService ===  1" src="../assets/images/services/geophysics.jpg"/>
+                            <img v-if="pickedService ===  1" src="../assets/images/services/geophysics2.jpg"/>
                         </div>                    
                     </div>
                 </template>
@@ -55,6 +55,11 @@
         color: black;
         transition: 200ms;
         cursor: pointer;
+        p{
+            @media (max-width: 700px){
+                font-size: 12px;
+            }
+        }
         &.active{
             background: black;
             p{
@@ -74,9 +79,14 @@ article{
         color: white;
         display: flex;
         width: 100%;
-
+        @media (max-width: 700px){
+            flex-direction: column;
+        }
         .title{
-            font-size: 21px;
+            font-size: 21px;    
+            @media (max-width: 700px){
+                font-size: 18px;  
+            }     
         }
         .texts{
            
@@ -85,9 +95,15 @@ article{
                 font-size: 24px;
                 font-weight: 600;
                 height: 10vh;
+                @media (max-width: 700px){
+                    height: 15vh;
+                }
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                @media (max-width: 700px){
+                    font-size: 18px;
+                }
             }
         }
         .images{
@@ -95,9 +111,13 @@ article{
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            gap: 25px;
+            gap: 10px;
             padding: 35px 10px 0 0;
-            width: 40%;
+            width: 40%;    
+            @media (max-width: 700px){
+                padding: 10px;
+                width: 100%;    
+            }
             height: fit-content;
             img{
                 width: 100%;
@@ -106,12 +126,21 @@ article{
             }
         }
         & > div{    
-            width:60%;      
+            width: 60%;      
+            @media (max-width: 700px){
+                width: 100%;    
+            }
             & > div{
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
+                @media (max-width: 700px){
+                    gap: 10px;  
+                }
                 padding: 20px;
+                @media (max-width: 700px){
+                    padding: 0 20px
+                }
                 width: 100%;
                 .description{ 
                     opacity: 0.75;;               

@@ -49,10 +49,10 @@ export const services = defineStore("services", {
         }
       },
       geology: {
-        title: "Geology",
-        description: "We provide geoscientific assessment of geological resources. Our team has extensive experience in assessing the natural resources. Our team provides industry-recognised expertise across a broad range of commodities, including; aggregates and industrial minerals, metallic minerals, hydrocarbons, and much more.",
+        title: $t('Geology'),
+        description: $t('geologyDescription'),
         serviceInfo:{
-          mainHeader:"Geological services",
+          mainHeader: $t('geologyMainHeader'),
           headers: [''],  
           articles:[
             ["Engineering geology, structural geology, geotechnics, hydrogeology, hydrology;",
@@ -65,10 +65,10 @@ export const services = defineStore("services", {
         }
       },     
       geodesy: {
-        title: $t('Geology'),
-        description: $t('geologyDescription'),
-        serviceInfo:{
-          mainHeader: $t('geologyMainHeader'),
+        title: $t('Geodesy'),
+            description: $t('geodesyDescription'),
+            serviceInfo:{
+            mainHeader: $t('geodesyMainHeader'),
           headers: [''],
           articles:[[
             "Topographic measurements;",
