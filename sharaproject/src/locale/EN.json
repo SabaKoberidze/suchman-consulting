@@ -5,9 +5,11 @@
     "Contact": "Contact",
     "Archeology": "Archeology",
     "Geophysics": "Geophysics",
+    "GeoTechnics": "Geotechnics",
     "Geology": "Geology",
     "Geodesy": "Geodesy",
-    
+    "Supervising": "Supervising",
+
     "ArcheologyDescription": "Suchman Consulting offers a full range of geoarchaeology studies. Our team uses a variety of earth sciences methodologies to help enhance our understanding of the archaeological record and assess the potential for buried cultural resources within your project area.",
     "ArcheologyMainHeader": "Archeological services",
 

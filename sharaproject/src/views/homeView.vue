@@ -9,8 +9,7 @@
         <div class="services">
             <div v-for="(service, key, index) in servicesStore.services" class="service" @click="pickService(index)">
                 <img :src="getImageUrl(key)">
-                <p class="title">{{ service.title }}</p>
-                <p class="description">{{ service.description }}</p>               
+                <p class="title">{{ service.title }}</p>            
                 <button>OPEN</button>
             </div>
         </div>
@@ -23,7 +22,7 @@
     const servicesStore = services();
     function getImageUrl(image: string): string {
         let relativePath: string = `./${image}`        
-        return relativePath + '.png'
+        return relativePath + '.svg'
     }
     function pickService(index: number): void {  
         servicesStore.pageindex = index
@@ -52,6 +51,7 @@
                 border-radius: 5px;              
                 img{
                     width: 100%;
+                   
                 }
                 p{               
                     max-width: 80%;  
@@ -93,6 +93,7 @@
                 } 
                 img{
                     width: 20%;
+                    filter: brightness(10);
                 }
                 .title{
                     font-size: 18px;
@@ -101,13 +102,7 @@
                         font-size: 4vw;
                     }            
                         
-                }
-                .description{
-                    font-size: 16px;
-                    @media(max-width:600px) {
-                        font-size: 3vw;
-                    } 
-                }
+                }               
                 button{
                     cursor: pointer;
                     border-radius: 5px 5px 0 0;
