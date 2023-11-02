@@ -1,9 +1,11 @@
 <template>
     <div>
-        <div class="navigation">
-            <div v-for="(service,, index) in servicesStore.services" :class="{'active': pickedService === index}" @click ="pickService(index)">
-                <p>{{service.title}}</p>
-            </div>        
+        <div class="navContainer" ref="navContainer">
+            <div class="navigation" ref="navContent" @scroll="handleScroll" :class="{leftFade: leftFade, rightFade: rightFade}">
+                <div v-for="(service,, index) in servicesStore.services" :class="{'active': pickedService === index}" @click ="pickService(index)">
+                    <p>{{service.title}}</p>
+                </div>        
+            </div>
         </div>
         <article> 
             <template  v-for="(service,, index) in servicesStore.services">
@@ -15,65 +17,157 @@
                                 <p class="description" v-for="(data) in service.serviceInfo.articles[index]">{{data}}</p>           
                             </div>
                         </div>
-                        <div class="images">
-                            <img v-if="pickedService ===  3" src="../assets/images/services/geodesy.jpg"/>
-                            <img v-if="pickedService ===  2" src="../assets/images/services/geology.jpg"/>
-                            <img v-if="pickedService ===  1" src="../assets/images/services/geophysics.jpg"/>
-                            <img v-if="pickedService ===  1" src="../assets/images/services/geophysics2.jpg"/>
-                        </div>                    
-                    </div>
-                </template>
+                    <div class="images">
+                        <img v-if="pickedService ===  3" src="../assets/images/services/geodesy.jpg"/>
+                        <img v-if="pickedService ===  2" src="../assets/images/services/geology.jpg"/>
+                        <img v-if="pickedService ===  1" src="../assets/images/services/geophysics.jpg"/>
+                        <img v-if="pickedService ===  1" src="../assets/images/services/geophysics2.jpg"/>
+                    </div>                    
+                </div>
+            </template>
         </article>
     </div>
         
 </template>
 <script lang="ts" setup>
     import { services } from "../stores/services";
-    import {ref} from "vue"
+    import {computed, ref} from "vue"
     const pickedService = ref(0)
+    const leftFade = ref(false);
+    const rightFade = ref(false);
     const servicesStore = services();
+    const navContainer = ref(null);
+    const navContent = ref(null)
     pickedService.value = servicesStore.pageindex
     function pickService(index: number) {
         pickedService.value = index
     }
+    function handleScroll(event: any) {
+      let scrollPositionLeft = event.target.scrollLeft;
+      let maxScroll = event.target.scrollWidth - event.target.clientWidth;
+      if(event.target.scrollWidth < event.target.clientWidth){
+        leftFade.value = false
+        rightFade.value = false
+        return
+      }
+      if(scrollPositionLeft === 0){
+        leftFade.value = false
+        rightFade.value = true
+      }
+      else if(scrollPositionLeft === maxScroll){
+        leftFade.value = true
+        rightFade.value = false
+      }
+      else{
+        leftFade.value = true
+        rightFade.value = true
+      }
+    }
+    let container = navContainer.value;
+    let content = navContent.value;
+    console.log(container)
+    console.log(content)
+    // const isOverflowing = computed(() => {
+    //   const container = navContainer.value;
+    //   const content = navContent.value;
+    //   if(content && container){
+    //       //return content.value.scrollWidth > container.value.clientWidth;
+    //   }
+    // }
 </script>
 <style lang="scss" scoped>
-
-.navigation{    
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
-    height: 40px;
-    & > div{
-        height: 100%;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.849);
+.navContainer{
+    position: relative;
+    .navigation{    
         display: flex;
+        width: 100%;  
         align-items: center;
-        justify-content: center;
-        color: black;
-        transition: 200ms;
-        cursor: pointer;
-        p{
-            @media (max-width: 700px){
-                font-size: 12px;
+        margin-top: 10px;
+        @media (min-width: 850px) {
+            margin-top: 0px;
+            justify-content: space-between;
+        }
+        height: 40px;
+        gap: 5px;
+        padding: 0 5px;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        &::-webkit-scrollbar{
+            display: none;
+        }
+        &.leftFade,&.rightFade{
+            &::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                width: 50px;
+                height: 100%;
+                right: -50px;
+                transition: 200ms;
+                background: linear-gradient(to right, transparent 0%, black 100%);
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                width: 50px;
+                height: 100%;
+                left: -50px;
+                transition: 200ms;
+                background: linear-gradient(to left, transparent 0%, black 100%);
             }
         }
-        &.active{
-            background: black;
-            p{
-                color: white;
+        &.rightFade{
+            &::before{
+                right: 0;            
             }
         }
-        &:hover{
-            background: black;
+        &.leftFade{
+            &::after{
+                left: 0;          
+            }
+        }
+        & > div{
+            border-radius: 15px;
+            padding: 3px;
+            height: 100%;
+            width: 140px;
+            @media (min-width: 850px) {
+                width: auto;
+                flex-grow: 1;
+                border-radius: 0px;
+            }
+            background: rgba(255, 255, 255, 0.849);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            transition: 200ms;
+            cursor: pointer;
+           
             p{
-                color: white;
+                @media (max-width: 700px){
+                    font-size: 12px;
+                }
+            }
+            &.active{
+                background: rgba(0, 51, 153, 0.5764705882);
+                p{
+                    color: white;
+                }
+            }
+            &:hover{
+                background: rgba(0, 51, 153, 0.5764705882);
+                p{
+                    color: white;
+                }
             }
         }
     }
 }
+
 article{
     .serviceBody{
         color: white;

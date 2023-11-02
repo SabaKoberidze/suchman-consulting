@@ -6,6 +6,7 @@
                 <p>{{$t('intro')}}</p>
             </div>
         </div>
+        <p class="ourServices">Our Services</p>
         <div class="services">
             <div v-for="(service, key, index) in servicesStore.services" class="service" @click="pickService(index)">
                 <img :src="getImageUrl(key)">
@@ -39,6 +40,7 @@
             background-image: url("../assets/images/greyground.jpg");
             background-size: cover;
             background-attachment: fixed;
+            background-position: center;
             &__intro{
                 padding: 20px;
                 display:flex;
@@ -66,6 +68,17 @@
                     width: 100vw;
                 }             
             }
+        }  
+        .ourServices{
+            color: white;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            background-color: rgba(196, 196, 196, 0.137);
+            margin-top: 10px;
         }
         .services{
             margin-top: 10px;
@@ -89,7 +102,7 @@
                     background:rgba(236, 236, 236, 0.171);               
                 }
                 @media(max-width:600px) {
-                        width: calc(50vw - 5px);
+                    width: calc(50vw - 5px);
                 } 
                 img{
                     width: 20%;
@@ -101,7 +114,7 @@
                     @media(max-width:600px) {
                         font-size: 4vw;
                     }            
-                        
+                    
                 }               
                 button{
                     cursor: pointer;

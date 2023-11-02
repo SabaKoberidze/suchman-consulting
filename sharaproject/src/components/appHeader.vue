@@ -1,21 +1,21 @@
 <template>
  <header>
   <div class="logo" @click="goToHome()">
-    <img src="../assets/images/logo.png"/>
+    <img src="../assets/images/SULCHAN.svg"/>
   </div>
   <div class="routes" v-if="!isMobile">
     <router-link class="routes__home" to="/">{{$t('Home')}}</router-link>
     <router-link class="routes__services" to="/services">{{$t('Services')}}</router-link>
     <router-link class="routes__contact" to="/contact">{{$t('Contact')}}</router-link>
     <div class="routes__flag">
-      <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'GE'" src="../assets/images/flags/georgia.png"/>
-      <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'EN'" src="../assets/images/flags/america.png"/>
-      <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'DE'" src="../assets/images/flags/germany.png"/>
+      <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'GE'" src="../assets/images/flags/georgia.svg"/>
+      <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'EN'" src="../assets/images/flags/america.svg"/>
+      <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'DE'" src="../assets/images/flags/germany.svg"/>
       <Transition name="lang">
         <div class="routes__flag__languages" v-show="flagsAreVisible">
-          <img @:click="changeLang('GE')" src="../assets/images/flags/georgia.png"/>
-          <img @:click="changeLang('EN')" src="../assets/images/flags/america.png"/>
-          <img @:click="changeLang('DE')" src="../assets/images/flags/germany.png"/>
+          <img @:click="changeLang('GE')" src="../assets/images/flags/georgia.svg"/>
+          <img @:click="changeLang('EN')" src="../assets/images/flags/america.svg"/>
+          <img @:click="changeLang('DE')" src="../assets/images/flags/germany.svg"/>
         </div>
       </Transition>
     </div>
@@ -27,14 +27,14 @@
       <router-link class="routes__services" to="/services">Services</router-link>
       <router-link class="routes__contact" to="/contact">Contact</router-link>
       <div class="burger__flag" @click="showFlagsMobile = !showFlagsMobile">
-        <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'GE'" src="../assets/images/flags/georgia.png"/>
-        <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'EN'" src="../assets/images/flags/america.png"/>
-        <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'DE'" src="../assets/images/flags/germany.png"/>
+        <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'GE'" src="../assets/images/flags/georgia.svg"/>
+        <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'EN'" src="../assets/images/flags/america.svg"/>
+        <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'DE'" src="../assets/images/flags/germany.svg"/>
       </div>  
       <div class="LanguagesMobile" v-if="showFlagsMobile">
-        <img @:click="changeLang('GE')" src="../assets/images/flags/georgia.png"/>
-        <img @:click="changeLang('EN')" src="../assets/images/flags/america.png"/>
-        <img @:click="changeLang('DE')" src="../assets/images/flags/germany.png"/>
+        <img @:click="changeLang('GE')" src="../assets/images/flags/georgia.svg"/>
+        <img @:click="changeLang('EN')" src="../assets/images/flags/america.svg"/>
+        <img @:click="changeLang('DE')" src="../assets/images/flags/germany.svg"/>
       </div>  
   </div>
   </div>
@@ -108,9 +108,6 @@ function showBurgerDropdown(){
       cursor: pointer;
       img{
         height: 100%;
-        @media(max-width:600px) {
-          height: 60%;
-        }
       }
     }
     .routes{
@@ -149,6 +146,10 @@ function showBurgerDropdown(){
           height: 25%;
           cursor: pointer;
         }
+        & > img{
+          padding: 0;
+          height: 30%;
+        }
         &__languages{          
           position: absolute;
           display: flex;
@@ -166,8 +167,7 @@ function showBurgerDropdown(){
       }
     
     }
-    .burger{
-    
+    .burger{    
       cursor: pointer;
       min-width: 100px;
       height: 100%;
@@ -253,11 +253,14 @@ function showBurgerDropdown(){
         display: flex;
         justify-content: center;
         width: 100%;
-        padding: 15px;
-        max-height: 60px;
+        padding: 0;
+        max-height: 60px;  
         img{
           width: 50px;
         }
+        & > img {
+          width: 60px;
+        }          
       }
     }
     

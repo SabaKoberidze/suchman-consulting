@@ -10,15 +10,11 @@
     "Geodesy": "Geodesy",
     "Supervising": "Supervising",
 
-    "ArcheologyDescription": "Suchman Consulting offers a full range of geoarchaeology studies. Our team uses a variety of earth sciences methodologies to help enhance our understanding of the archaeological record and assess the potential for buried cultural resources within your project area.",
     "ArcheologyMainHeader": "Archeological services",
 
-    "geophysicsDescription": "we can precisely mark the position and depth of various underground utilities, including gas, communications, and sewer lines as well as underground storage tanks and PVC pipes. Our team can provide a high-quality report within an understandable time frame depending on the size of your project",
     "geophysicsMainHeader": "Geophysical services",
 
-    "geologyDescription": "We provide geoscientific assessment of geological resources. Our team has extensive experience in assessing the natural resources. Our team provides industry-recognised expertise across a broad range of commodities, including; aggregates and industrial minerals, metallic minerals, hydrocarbons, and much more.",
     "geologyMainHeader": "Geophysical services",
 
-    "geodesyDescription": "Topographic and Cadastral measurements, Monitoring of works, Registration of rights, GIS - geoinformation systems, Digital aerial photography and cartography using drones, ultispectral imaging, (bathygraphic) Bottom depth scan, building a bathygraphic depth map.",
     "geodesyMainHeader": "Geodesy Services"
 }

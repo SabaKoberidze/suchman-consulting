@@ -6,8 +6,7 @@ export const services = defineStore("services", {
     pageindex: 0,
     services: {
       geophysics: {
-        title: $t('Geophysics'),
-        description: $t('geophysicsDescription'),
+        title: $t('Geophysics'),     
         serviceInfo:{
           mainHeader: $t('geophysicsMainHeader'),
           headers: [            
@@ -30,7 +29,6 @@ export const services = defineStore("services", {
       },
       geotechnics: {
         title: $t('GeoTechnics'),
-        description: $t('geophysicsDescription'),
         serviceInfo:{
           mainHeader: $t('geophysicsMainHeader'),
           headers: [            
@@ -53,7 +51,6 @@ export const services = defineStore("services", {
       },
       geology: {
         title: $t('Geology'),
-        description: $t('geologyDescription'),
         serviceInfo:{
           mainHeader: $t('geologyMainHeader'),
           headers: [''],  
@@ -69,9 +66,8 @@ export const services = defineStore("services", {
       },     
       geodesy: {
         title: $t('Geodesy'),
-            description: $t('geodesyDescription'),
-            serviceInfo:{
-            mainHeader: $t('geodesyMainHeader'),
+          serviceInfo:{
+          mainHeader: $t('geodesyMainHeader'),
           headers: [''],
           articles:[[
             "Topographic measurements;",
@@ -85,7 +81,6 @@ export const services = defineStore("services", {
       },
       supervising: {
         title: $t('Supervising'),
-        description: $t('ArcheologyDescription'),
         serviceInfo:{
           mainHeader: $t('ArcheologyMainHeader'),               
           headers: [''],
@@ -103,7 +98,6 @@ export const services = defineStore("services", {
       },
       archeology: {
         title: $t('Archeology'),
-        description: $t('ArcheologyDescription'),
         serviceInfo:{
           mainHeader: 
             "Archeological services",
@@ -129,7 +123,6 @@ export const services = defineStore("services", {
       this.services = {         
           geophysics: {
             title: $t('Geophysics'),
-            description: $t('geophysicsDescription'),
             serviceInfo:{
               mainHeader: $t('geophysicsMainHeader'),
               headers: [            
@@ -152,7 +145,6 @@ export const services = defineStore("services", {
           },
           geotechnics: {
             title: $t('GeoTechnics'),
-            description: $t('geophysicsDescription'),
             serviceInfo:{
               mainHeader: $t('geophysicsMainHeader'),
               headers: [            
@@ -175,7 +167,6 @@ export const services = defineStore("services", {
           },
           geology: {
             title: $t('Geology'),
-            description: $t('geologyDescription'),
             serviceInfo:{
               mainHeader: $t('geologyMainHeader'),
               headers: [''],  
@@ -191,7 +182,6 @@ export const services = defineStore("services", {
           },     
           geodesy: {
             title: $t('Geodesy'),
-            description: $t('geodesyDescription'),
             serviceInfo:{
               mainHeader: $t('geodesyMainHeader'),
               headers: [''],
@@ -207,7 +197,6 @@ export const services = defineStore("services", {
           },
           supervising: {
             title: $t('Supervising'),
-            description: $t('ArcheologyDescription'),
             serviceInfo:{
               mainHeader: $t('ArcheologyMainHeader'),               
               headers: [''],
@@ -225,7 +214,6 @@ export const services = defineStore("services", {
           },
           archeology: {
             title: $t('Archeology'),
-            description: $t('ArcheologyDescription'),
             serviceInfo:{
               mainHeader: $t('ArcheologyMainHeader'),               
               headers: [''],
