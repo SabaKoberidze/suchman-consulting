@@ -23,9 +23,9 @@
   <div class="burger" v-if="isMobile" v-on:click.prevent.self="showBurgerDropdown()">
     <div class="burger__icon" :class="{menuOpen: menuOpen}" v-on:click.prevent.self="showBurgerDropdown()"></div>
     <div class="burger__menu" v-show="menuOpen">
-      <router-link class="routes__home" to="/">Home</router-link>
-      <router-link class="routes__services" to="/services">Services</router-link>
-      <router-link class="routes__contact" to="/contact">Contact</router-link>
+      <router-link class="routes__home" to="/">{{$t('Home')}}</router-link>
+      <router-link class="routes__services" to="/services">{{$t('Services')}}</router-link>
+      <router-link class="routes__contact" to="/contact">{{$t('Contact')}}</router-link>
       <div class="burger__flag" @click="showFlagsMobile = !showFlagsMobile">
         <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'GE'" src="../assets/images/flags/georgia.svg"/>
         <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'EN'" src="../assets/images/flags/america.svg"/>
@@ -104,7 +104,8 @@ function showBurgerDropdown(){
     .logo{
       display: flex;      
       align-items: center;
-      height: 100%;
+      height: 60%;
+      margin-left: 18px;
       cursor: pointer;
       img{
         height: 100%;

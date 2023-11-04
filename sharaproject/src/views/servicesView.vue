@@ -1,29 +1,26 @@
 <template>
     <div>
         <div class="navContainer" ref="navContainer">
-            <div class="navigation" ref="navContent" @scroll="handleScroll" :class="{leftFade: leftFade, rightFade: rightFade}">
+            <div class="navigation" ref="navContent" @scroll="handleScroll" :class="{leftFade: leftFade, rightFade: rightFade, scrollable: scrollable}">
                 <div v-for="(service,, index) in servicesStore.services" :class="{'active': pickedService === index}" @click ="pickService(index)">
                     <p>{{service.title}}</p>
                 </div>        
             </div>
         </div>
         <article> 
-            <template  v-for="(service,, index) in servicesStore.services">
+            <template  v-for="(service, name, index) in servicesStore.services">
                     <div class="serviceBody" v-if="pickedService === index">
                         <div class="texts">
-                            <p class="mainText">{{service.serviceInfo.mainHeader}}</p>
+                            <div class="serviceHeader">
+                                <img :src="`./services/${name}.jpg`">
+                                <p class="mainText">{{service.title}}</p>
+                            </div>
                             <div v-for="(data, index) in service.serviceInfo.headers">
                                 <p class="title" v-if="data">{{data}}</p>               
                                 <p class="description" v-for="(data) in service.serviceInfo.articles[index]">{{data}}</p>           
                             </div>
-                        </div>
-                    <div class="images">
-                        <img v-if="pickedService ===  3" src="../assets/images/services/geodesy.jpg"/>
-                        <img v-if="pickedService ===  2" src="../assets/images/services/geology.jpg"/>
-                        <img v-if="pickedService ===  1" src="../assets/images/services/geophysics.jpg"/>
-                        <img v-if="pickedService ===  1" src="../assets/images/services/geophysics2.jpg"/>
-                    </div>                    
-                </div>
+                        </div>                                 
+                    </div>
             </template>
         </article>
     </div>
@@ -31,13 +28,14 @@
 </template>
 <script lang="ts" setup>
     import { services } from "../stores/services";
-    import {computed, ref} from "vue"
+    import {Ref, onMounted, ref} from "vue"
     const pickedService = ref(0)
     const leftFade = ref(false);
     const rightFade = ref(false);
     const servicesStore = services();
     const navContainer = ref(null);
-    const navContent = ref(null)
+    const navContent:Ref = ref(null);
+    const scrollable:Ref = ref(null);
     pickedService.value = servicesStore.pageindex
     function pickService(index: number) {
         pickedService.value = index
@@ -45,11 +43,13 @@
     function handleScroll(event: any) {
       let scrollPositionLeft = event.target.scrollLeft;
       let maxScroll = event.target.scrollWidth - event.target.clientWidth;
-      if(event.target.scrollWidth < event.target.clientWidth){
+      if(event.target.scrollWidth <= event.target.clientWidth){
         leftFade.value = false
         rightFade.value = false
+        scrollable.value = false
         return
       }
+      scrollable.value = true
       if(scrollPositionLeft === 0){
         leftFade.value = false
         rightFade.value = true
@@ -63,17 +63,20 @@
         rightFade.value = true
       }
     }
-    let container = navContainer.value;
-    let content = navContent.value;
-    console.log(container)
-    console.log(content)
-    // const isOverflowing = computed(() => {
-    //   const container = navContainer.value;
-    //   const content = navContent.value;
-    //   if(content && container){
-    //       //return content.value.scrollWidth > container.value.clientWidth;
-    //   }
-    // }
+    const isOverflowing = () => {
+        const scrollEvent = new Event('scroll', {
+          bubbles: true,
+          cancelable: true
+        });        
+        navContent?.value?.dispatchEvent(scrollEvent);
+    }
+    
+    onMounted(() => {
+        isOverflowing() 
+        window.addEventListener('resize', () => {
+            isOverflowing()
+        })
+    })
 </script>
 <style lang="scss" scoped>
 .navContainer{
@@ -83,7 +86,7 @@
         width: 100%;  
         align-items: center;
         margin-top: 10px;
-        @media (min-width: 850px) {
+        .scrollable {
             margin-top: 0px;
             justify-content: space-between;
         }
@@ -100,6 +103,7 @@
         &.leftFade,&.rightFade{
             &::before{
                 content: "";
+                pointer-events: none;
                 position: absolute;
                 top: 0;
                 width: 50px;
@@ -110,6 +114,7 @@
             }
             &::after{
                 content: "";
+                pointer-events: none;
                 position: absolute;
                 top: 0;
                 width: 50px;
@@ -183,44 +188,36 @@ article{
             }     
         }
         .texts{
+           .serviceHeader{
+               margin-top: 10px;
+               margin-bottom: 10px;
+               width: 100%;
+               height: 40vh;
+               position: relative;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               overflow: hidden;
+               .mainText{
+                font-size: 100px;
+                font-weight: 600; 
+                text-shadow: 0px 0px 10px black;
+                z-index: 1;       
+                    @media (max-width: 700px){
+                        font-size: 12vw;
+                    }
+                }
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    position: absolute;
+                }
+           }
            
-            .mainText{
-                width: 100%;
-                font-size: 24px;
-                font-weight: 600;
-                height: 10vh;
-                @media (max-width: 700px){
-                    height: 15vh;
-                }
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                @media (max-width: 700px){
-                    font-size: 18px;
-                }
-            }
-        }
-        .images{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            gap: 10px;
-            padding: 35px 10px 0 0;
-            width: 40%;    
-            @media (max-width: 700px){
-                padding: 10px;
-                width: 100%;    
-            }
-            height: fit-content;
-            img{
-                width: 100%;
-                border-radius: 2%;
-                filter: grayscale(0.5);
-            }
-        }
+        }        
         & > div{    
-            width: 60%;      
+            width: 100%;      
             @media (max-width: 700px){
                 width: 100%;    
             }

@@ -2,11 +2,10 @@
     <article>
         <div class="landingPage">
             <div class="landingPage__intro">
-                <img src="../assets/images/logo.png"/>
+                <img src="../assets/images/SULCHAN.svg"/>
                 <p>{{$t('intro')}}</p>
             </div>
-        </div>
-        <p class="ourServices">Our Services</p>
+        </div>        
         <div class="services">
             <div v-for="(service, key, index) in servicesStore.services" class="service" @click="pickService(index)">
                 <img :src="getImageUrl(key)">
@@ -53,7 +52,7 @@
                 border-radius: 5px;              
                 img{
                     width: 100%;
-                   
+                    padding: 20px;
                 }
                 p{               
                     max-width: 80%;  
@@ -68,18 +67,7 @@
                     width: 100vw;
                 }             
             }
-        }  
-        .ourServices{
-            color: white;
-            width: 100%;
-            height: 80px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 40px;
-            background-color: rgba(196, 196, 196, 0.137);
-            margin-top: 10px;
-        }
+        }         
         .services{
             margin-top: 10px;
             display: grid;
@@ -109,7 +97,7 @@
                     filter: brightness(10);
                 }
                 .title{
-                    font-size: 18px;
+                    font-size: 1.5vw;
                     font-weight: 600; 
                     @media(max-width:600px) {
                         font-size: 4vw;
