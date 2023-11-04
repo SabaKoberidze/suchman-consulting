@@ -51,7 +51,7 @@ import { ref } from 'vue';
                 navigator.clipboard.writeText("info@smcgeo.org");
                 break;
             case 2:
-                window.location.href = 'https://fb.com/suchman_consulting'
+                window.location.href = 'https://www.facebook.com/profile.php?id=100086942021704'
                 break;
         }
     }

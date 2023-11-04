@@ -8,6 +8,7 @@ export const services = defineStore("services", {
       geophysics: {
         title: $t('Geophysics'),     
         serviceInfo:{
+          bullets: [false,true,true,true,true,true,true,true,true],
           headers: [            
             $t('GeophysicsHeader1')  
           ],
@@ -26,6 +27,7 @@ export const services = defineStore("services", {
       geotechnics: {
         title: $t('GeoTechnics'),
         serviceInfo:{
+          bullets: [2,3,4,5,6,7,8,9],
           headers: [            
             "Seismics",
             "Electrical search work",
@@ -47,6 +49,7 @@ export const services = defineStore("services", {
       geology: {
         title: $t('Geology'),
         serviceInfo:{
+          bullets: [false, false],
           headers: [''],  
           articles:[
             ["Engineering geology, structural geology, geotechnics, hydrogeology, hydrology;",
@@ -61,6 +64,7 @@ export const services = defineStore("services", {
       geodesy: {
         title: $t('Geodesy'),
           serviceInfo:{
+            bullets: [true], 
           headers: [''],
           articles:[[
             "Topographic measurements;",
@@ -74,23 +78,34 @@ export const services = defineStore("services", {
       },
       supervising: {
         title: $t('Supervising'),
-        serviceInfo:{              
-          headers: [''],
-          articles:[[
-            "Searching for high-resolution aerospace images in the research area and deciphering them (probable separation of archaeological zones)",
-            "GPS of archaeological objects during field reconnaissance Marking with coordinates.",
-            "Creating a GIS project and integrating existing spatial data",
-            "Based on the results of aerial and field-archaeological reconnaissance, Preparation of large and medium-scale thematic maps.",        
-            "Aerial photogrammetric surveying using GPS points gives us 2 different products: orthophoto and relief surface Digital model. Resolution depends on shooting height and It varies within 1 - 20 cm. Geographical accuracy is absolute in coordinates < 0.5 m.",
-            "Multispectral aerial photography of the infrared range sensor additionally. Different types of pseudo-color images are obtained and Different types of indices (eg vegetation index).",
-            "Archaeological supervision during the construction period.",
-            "Photogrammetric 3D fixation of the archaeological excavation site By shooting in the field, detailed 3D models, plans and cuts by building"
-          ]]
+        serviceInfo:{        
+          bullets: [false, true],    
+          headers: ['',''],
+          articles:[
+            [
+              $t('SupervisingArticle1-1'),
+            ],
+            [
+              $t('SupervisingArticle1-2'),
+              $t('SupervisingArticle1-3'),
+              $t('SupervisingArticle1-4'),
+              $t('SupervisingArticle1-5'),
+              $t('SupervisingArticle1-6'),
+              $t('SupervisingArticle1-7'),
+              $t('SupervisingArticle1-8'),
+              $t('SupervisingArticle1-9'),
+              $t('SupervisingArticle1-10'),
+              $t('SupervisingArticle1-11'),
+              $t('SupervisingArticle1-12'),
+              $t('SupervisingArticle1-13'),
+            ]                
+          ]
         }             
       },
       archeology: {
         title: $t('Archeology'),
         serviceInfo:{
+          bullets: [2,3,4,5,6,7,8,9],
           headers: [''],
           articles:[[
             "Searching for high-resolution aerospace images in the research area and deciphering them (probable separation of archaeological zones)",
@@ -114,6 +129,7 @@ export const services = defineStore("services", {
           geophysics: {
             title: $t('Geophysics'),
             serviceInfo:{
+              bullets: [false,true,true,true,true,true,true,true,true],
               headers: [            
                 $t('GeophysicsHeader1'),
                 $t('GeophysicsHeader2'),
@@ -191,6 +207,7 @@ export const services = defineStore("services", {
           geotechnics: {
             title: $t('GeoTechnics'),
             serviceInfo:{
+              bullets: [2,3,4,5,6,7,8,9],
               headers: [            
                 "Seismics",
                 "Electrical search work",
@@ -212,6 +229,7 @@ export const services = defineStore("services", {
           geology: {
             title: $t('Geology'),
             serviceInfo:{
+              bullets: [false, false],
               headers: [            
                 $t('GeologyHeader1'),
               ],  
@@ -225,7 +243,8 @@ export const services = defineStore("services", {
           },     
           geodesy: {
             title: $t('Geodesy'),
-            serviceInfo:{
+            serviceInfo:{  
+              bullets: [true], 
               headers: [''],
               articles:[[
                 $t('GeodesicArticle1-1'),
@@ -247,28 +266,34 @@ export const services = defineStore("services", {
           },
           supervising: {
             title: $t('Supervising'),
-            serviceInfo:{             
-              headers: [''],
-              articles:[[
-                $t('SupervisingArticle1-1'),
-                $t('SupervisingArticle1-2'),
-                $t('SupervisingArticle1-3'),
-                $t('SupervisingArticle1-4'),
-                $t('SupervisingArticle1-5'),
-                $t('SupervisingArticle1-6'),
-                $t('SupervisingArticle1-7'),
-                $t('SupervisingArticle1-8'),
-                $t('SupervisingArticle1-9'),
-                $t('SupervisingArticle1-10'),
-                $t('SupervisingArticle1-11'),
-                $t('SupervisingArticle1-12'),
-                $t('SupervisingArticle1-13'),
-              ]]
+            serviceInfo:{ 
+              bullets: [false, true],    
+              headers: ['',''],
+              articles:[
+                [
+                  $t('SupervisingArticle1-1'),
+                ],
+                [
+                  $t('SupervisingArticle1-2'),
+                  $t('SupervisingArticle1-3'),
+                  $t('SupervisingArticle1-4'),
+                  $t('SupervisingArticle1-5'),
+                  $t('SupervisingArticle1-6'),
+                  $t('SupervisingArticle1-7'),
+                  $t('SupervisingArticle1-8'),
+                  $t('SupervisingArticle1-9'),
+                  $t('SupervisingArticle1-10'),
+                  $t('SupervisingArticle1-11'),
+                  $t('SupervisingArticle1-12'),
+                  $t('SupervisingArticle1-13'),
+                ]                
+              ]
             }             
           },
           archeology: {
             title: $t('Archeology'),
-            serviceInfo:{              
+            serviceInfo:{   
+              bullets: [2,3,4,5,6,7,8,9],           
               headers: [''],
               articles:[[
                 "Searching for high-resolution aerospace images in the research area and deciphering them (probable separation of archaeological zones)",

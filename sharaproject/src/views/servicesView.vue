@@ -17,7 +17,7 @@
                             </div>
                             <div v-for="(data, index) in service.serviceInfo.headers">
                                 <p class="title" v-if="data">{{data}}</p>               
-                                <p class="description" v-for="(data) in service.serviceInfo.articles[index]">{{data}}</p>           
+                                <p class="description" :class="{bulleted: service.serviceInfo.bullets[index]}" v-for="(data) in service.serviceInfo.articles[index]">{{data}}</p>           
                             </div>
                         </div>                                 
                     </div>
@@ -234,10 +234,12 @@ article{
                 }
                 width: 100%;
                 .description{ 
-                    opacity: 0.75;;               
-                    display: list-item;        
-                    list-style-type:    circle;    
-                    list-style-position: inside; 
+                    opacity: 0.75;
+                    &.bulleted{
+                        display: list-item;        
+                        list-style-type: circle;    
+                        list-style-position: inside;
+                    }                           
                     &:last-child{
                         margin-bottom: 20px;
                     }
