@@ -42,6 +42,7 @@
     function handleScroll(event: any) {
       let scrollPositionLeft = event.target.scrollLeft;
       let maxScroll = event.target.scrollWidth - event.target.clientWidth;
+      alert(`${maxScroll} and ${scrollPositionLeft}`)
       if(event.target.scrollWidth <= event.target.clientWidth){
         leftFade.value = false
         rightFade.value = false
