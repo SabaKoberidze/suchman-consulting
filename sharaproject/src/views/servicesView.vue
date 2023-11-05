@@ -3,10 +3,7 @@
         <div class="navContainer" ref="navContainer">
             <div class="navigation" ref="navContent" @scroll="handleScroll" :class="{leftFade: leftFade, rightFade: rightFade, scrollable: scrollable}">
                 <div v-for="(service,, index) in servicesStore.services" :class="{'active': pickedService === index}" @click ="pickService(index)">
-                    <p>{{service.title}}</p>   
-                    <p>{{text1}}</p>
-                    <p>/</p>  
-                    <p>{{text2}}</p>                 
+                    <p>{{service.title}}</p>                   
                 </div>       
                  
             </div>
@@ -39,9 +36,6 @@
     const navContainer = ref(null);
     const navContent:Ref = ref(null);
     const scrollable:Ref = ref(null);
-
-    const text1:Ref = ref(0)
-    const text2:Ref = ref(0)
     pickedService.value = servicesStore.pageindex
     function pickService(index: number) {
         pickedService.value = index
@@ -49,8 +43,6 @@
     function handleScroll(event: any) {
       let scrollPositionLeft = event.target.scrollLeft;
       let maxScroll = event.target.scrollWidth - event.target.clientWidth;
-      text1.value = scrollPositionLeft.toFixed(0)
-      text2.value = maxScroll.toFixed(0)
       if(event.target.scrollWidth <= event.target.clientWidth){
         leftFade.value = false
         rightFade.value = false
