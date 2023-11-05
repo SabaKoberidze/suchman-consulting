@@ -48,7 +48,7 @@ export const services = defineStore("services", {
             [
               $t('GeophysicsArticle4-1'),
               $t('GeophysicsArticle4-2'),
-              $t('GeophysicsArticle4-3'),
+              //$t('GeophysicsArticle4-3'),
               $t('GeophysicsArticle4-4'),
             ],        
             [
@@ -66,11 +66,11 @@ export const services = defineStore("services", {
             [
               $t('GeophysicsArticle7-1'),
               $t('GeophysicsArticle7-2'),
-              $t('GeophysicsArticle7-3'),
+              //$t('GeophysicsArticle7-3'),
             ],      
             [
-              $t('GeophysicsArticle8-1'),
-              $t('GeophysicsArticle8-2'),
+              //$t('GeophysicsArticle8-1'),
+              //$t('GeophysicsArticle8-2'),
               $t('GeophysicsArticle8-3'),
               $t('GeophysicsArticle8-4'),
             ],
@@ -147,24 +147,28 @@ export const services = defineStore("services", {
       geodesy: {
         title: $t('Geodesy'),
         serviceInfo:{  
-          bullets: [true], 
-          headers: [''],
-          articles:[[
-            $t('GeodesicArticle1-1'),
-            $t('GeodesicArticle1-2'),
-            $t('GeodesicArticle1-3'),
-            $t('GeodesicArticle1-4'),
-            $t('GeodesicArticle1-5'),
-            $t('GeodesicArticle1-6'),
-            $t('GeodesicArticle1-7'),
-            $t('GeodesicArticle1-8'),
-            $t('GeodesicArticle1-9'),
-            $t('GeodesicArticle1-10'),
-            $t('GeodesicArticle1-11'),
-            $t('GeodesicArticle1-12'),
-            $t('GeodesicArticle1-13'),
-            $t('GeodesicArticle1-14'),
-          ]]
+          bullets: [true, false], 
+          headers: ['', ''],
+          articles:[            
+            [
+              $t('GeodesicArticle1-1'),
+              $t('GeodesicArticle1-2'),
+              $t('GeodesicArticle1-3'),
+              $t('GeodesicArticle1-4'),
+              $t('GeodesicArticle1-5'),
+              $t('GeodesicArticle1-6'),
+              $t('GeodesicArticle1-7'),
+              $t('GeodesicArticle1-8'),
+              $t('GeodesicArticle1-9'),
+              $t('GeodesicArticle1-10'),
+              $t('GeodesicArticle1-11'),
+            //  $t('GeodesicArticle1-12'),
+            ],
+            [
+              $t('GeodesicArticle1-13'),
+              $t('GeodesicArticle1-14'),
+            ]            
+          ]
         }
       },
       supervising: {
@@ -200,7 +204,7 @@ export const services = defineStore("services", {
           headers: [''],
           articles:[[
             $t('ArcheologyArticle1-1'),
-            $t('ArcheologyArticle1-2'),
+            //$t('ArcheologyArticle1-2'),
             $t('ArcheologyArticle1-3'),
             $t('ArcheologyArticle1-4'),
             $t('ArcheologyArticle1-5'),
@@ -259,7 +263,7 @@ export const services = defineStore("services", {
                 [
                   $t('GeophysicsArticle4-1'),
                   $t('GeophysicsArticle4-2'),
-                  $t('GeophysicsArticle4-3'),
+                  //$t('GeophysicsArticle4-3'),
                   $t('GeophysicsArticle4-4'),
                 ],        
                 [
@@ -277,11 +281,11 @@ export const services = defineStore("services", {
                 [
                   $t('GeophysicsArticle7-1'),
                   $t('GeophysicsArticle7-2'),
-                  $t('GeophysicsArticle7-3'),
+                  //$t('GeophysicsArticle7-3'),
                 ],      
                 [
-                  $t('GeophysicsArticle8-1'),
-                  $t('GeophysicsArticle8-2'),
+                  //$t('GeophysicsArticle8-1'),
+                  //$t('GeophysicsArticle8-2'),
                   $t('GeophysicsArticle8-3'),
                   $t('GeophysicsArticle8-4'),
                 ],
@@ -358,24 +362,29 @@ export const services = defineStore("services", {
           geodesy: {
             title: $t('Geodesy'),
             serviceInfo:{  
-              bullets: [true], 
-              headers: [''],
-              articles:[[
-                $t('GeodesicArticle1-1'),
-                $t('GeodesicArticle1-2'),
-                $t('GeodesicArticle1-3'),
-                $t('GeodesicArticle1-4'),
-                $t('GeodesicArticle1-5'),
-                $t('GeodesicArticle1-6'),
-                $t('GeodesicArticle1-7'),
-                $t('GeodesicArticle1-8'),
-                $t('GeodesicArticle1-9'),
-                $t('GeodesicArticle1-10'),
-                $t('GeodesicArticle1-11'),
-                $t('GeodesicArticle1-12'),
-                $t('GeodesicArticle1-13'),
-                $t('GeodesicArticle1-14'),
-              ]]
+              bullets: [true, false], 
+              headers: ['', ''],
+              articles:
+              [
+                [
+                  $t('GeodesicArticle1-1'),
+                  $t('GeodesicArticle1-2'),
+                  $t('GeodesicArticle1-3'),
+                  $t('GeodesicArticle1-4'),
+                  $t('GeodesicArticle1-5'),
+                  $t('GeodesicArticle1-6'),
+                  $t('GeodesicArticle1-7'),
+                  $t('GeodesicArticle1-8'),
+                  $t('GeodesicArticle1-9'),
+                  $t('GeodesicArticle1-10'),
+                  $t('GeodesicArticle1-11'),
+                //  $t('GeodesicArticle1-12'),
+                ],
+                [
+                  $t('GeodesicArticle1-13'),
+                  $t('GeodesicArticle1-14'),
+                ]
+              ],
             }
           },
           supervising: {
@@ -411,7 +420,7 @@ export const services = defineStore("services", {
               headers: [''],
               articles:[[
                 $t('ArcheologyArticle1-1'),
-                $t('ArcheologyArticle1-2'),
+                // $t('ArcheologyArticle1-2'),
                 $t('ArcheologyArticle1-3'),
                 $t('ArcheologyArticle1-4'),
                 $t('ArcheologyArticle1-5'),

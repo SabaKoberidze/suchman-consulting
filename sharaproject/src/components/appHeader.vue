@@ -233,8 +233,7 @@ function showBurgerDropdown(){
           height: 60px;
           width: 100%;
           border-bottom: 1px solid rgba(255, 255, 255, 0.164);
-          &.active-link,      
-          &:hover{
+          &.active-link{
             background-color: #00339993;
             color: white;
           }
