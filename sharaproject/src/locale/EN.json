@@ -3,12 +3,16 @@
     "intro": "Your Trusted Partner in Geosciences and Geoservices",
     "Services": "Services",
     "Contact": "Contact",
+    "About": "About",
+    "mobile": "phone:",
+    "email": "email:",
     "Archeology": "Archeology",
     "Geophysics": "Geophysics",
     "GeoTechnics": "Geotechnics",
     "Geology": "Geology",
     "Geodesy": "Geodesy",
     "Supervising": "Supervising",
+
 
     "GeophysicsHeader1" : "Exploration Expertise in Mining and Natural Resources",
     "GeophysicsArticle1-1": "Exploration encompasses all activities related to the search for deposits and their subsequent investigation and evaluation within the mining and natural resources sector. At Suchman Consulting, we place a strong emphasis on utilizing ground and airborne geophysical techniques for our exploration projects. Geophysics is pivotal in mapping underground structures in both 2D and 3D, guiding exploration programs, constructing geological models, and ultimately optimizing drilling processes to reduce costs.",
@@ -70,9 +74,11 @@
     "GeophysicsArticle9-4": "Marine EM",
 
 
+
     "GeologyHeader1" : "Geological Consultancy Services by Suchman Consulting",
     "GeologyArticle1-1": "Our team of geoscientists at Suchman Consulting specializes in comprehensive geological investigations for exploration projects. We provide expert solutions in geotechnical and rock mechanics, tailored for mining and construction ventures worldwide. Leveraging our extensive experience and expertise, we deliver services that encompass resource assessment of coal fields, coal bed methane extraction, CO2 sequestration, underground coal gasification, and strategies for controlled coal fire mitigation. Additionally, we excel in the interpretation of seismic and geophysical data for creating precise 3D geological models and evaluating geothermal potential.",
     "GeologyArticle1-2": "In the realm of natural resources, we cover every phase of the commodity cycle, from target identification to exploration, resource evaluation, and ultimately, mining and exploitation planning. Our 3D geological and block models of ore deposits form the foundation for effective mining, exploitation, and extraction strategies. We understand that geotechnical data is not only crucial for mining operations but also essential for assessing ground conditions for large-scale construction, both below and above ground. Conducting geometric and geophysical surveys of boreholes is an integral part of our geological investigations. Depending on the project requirements, we analyze various parameters that play a critical role in planning or augmenting the geological database. Borehole surveying is particularly crucial in instances with significant drill core or chip losses. Our specialized software allows us to interpret geological features along the walls of the drill hole, capturing invaluable structural and geological insights. Our borehole equipment is designed with safety and efficiency in mind, including explosion-proof components, and the capability to operate in inclined or even horizontal boreholes. Our in-house developed shuttle probes enable precise and cable-free measurements in both underground and surface boreholes.",
+
 
 
     "SupervisingArticle1-1": "Working in close contact with our clients, our engineers and experts deliver customised solutions that are both practical and cost-effective. We offer a complete range of services for the technical and economic evaluation of complex projects, supporting the customer every step of the way. Our portfolio covers subjects such as:",
@@ -90,6 +96,7 @@
     "SupervisingArticle1-13": "Safety concepts",
 
 
+
     "GeodesicArticle1-1": "Surveying of land and objects",
     "GeodesicArticle1-2": "Preparation of situational and geodetic plans for the design and development of spatial planning documentation",
     "GeodesicArticle1-3": "Division of parcels and formation of construction parcels for cadastre and land registry",
@@ -103,6 +110,58 @@
     "GeodesicArticle1-11": "All types of engineering and survey work for construction in progress or after completion of construction",
     "GeodesicArticle1-12": "Development of commasative works and transfer to the field",
     "GeodesicArticle1-13": "of the Earth's surface and its gravitational field. It involves the precise determination of positions, distances, and angles on the Earth's surface, as well as the study of the Earth's shape, orientation, and gravitational field variations over time.",
-    "GeodesicArticle1-14": "Geodesy plays a crucial role in various applications, including navigation systems (such as GPS), land surveying, mapping, satellite positioning, and in understanding processes like tectonic plate movements and sea-level changes. It provides the foundation for creating accurate maps and charts, as well as for activities like construction, urban planning, and scientific research."
+    "GeodesicArticle1-14": "Geodesy plays a crucial role in various applications, including navigation systems (such as GPS), land surveying, mapping, satellite positioning, and in understanding processes like tectonic plate movements and sea-level changes. It provides the foundation for creating accurate maps and charts, as well as for activities like construction, urban planning, and scientific research.",
+    
+    
+    
+    "ArcheologyArticle1-1": "Searching for high-resolution aerospace images in the research area and deciphering them (probable separation of archaeological zones)",
+    "ArcheologyArticle1-2": "GPS of archaeological objects during field reconnaissance Marking with coordinates.",
+    "ArcheologyArticle1-3": "Creating a GIS project and integrating existing spatial data",
+    "ArcheologyArticle1-4": "Based on the results of aerial and field-archaeological reconnaissance, Preparation of large and medium-scale thematic maps.",        
+    "ArcheologyArticle1-5": "Aerial photogrammetric surveying using GPS points gives us 2 different products: orthophoto and relief surface Digital model. Resolution depends on shooting height and It varies within 1 - 20 cm. Geographical accuracy is absolute in coordinates < 0.5 m.",
+    "ArcheologyArticle1-6": "Multispectral aerial photography of the infrared range sensor additionally. Different types of pseudo-color images are obtained and Different types of indices (eg vegetation index).",
+    "ArcheologyArticle1-7": "Archaeological supervision during the construction period.",
+    "ArcheologyArticle1-8": "Photogrammetric 3D fixation of the archaeological excavation site By shooting in the field, detailed 3D models, plans and cuts by building",
+  
+    
 
+    "GeotechnicsArticle1-1": "Choosing reliable and professional partners is paramount, especially in the planning phase. Mistakes and underestimations at this stage can have cascading effects on the entire project. At Suchman Consulting, our commitment is to ensure the successful, on-budget, and timely completion of your projects. We achieve this through flexible, intelligent planning, consultation, and evaluation.",
+    "GeotechnicsArticle1-2": "We offer a range of geotechnical tests for site investigations across all project phases. This includes groundwater surveys, analyses of rock and soil conditions, feasibility studies, and geotechnical consulting. By combining various testing methods, we gather comprehensive data tailored to your specific needs",
+    "GeotechnicsArticle1-3": "In the initial phases, Suchman Consulting conducts sampling, soil surveys, and site investigations to ascertain the soil properties and conditions. Additionally, we provide guidance throughout the construction process, documenting progress and offering recommendations for potential adjustments. Our geotechnical site investigation services also encompass the analysis of abandoned or non-operational industrial properties for remediation purposes.",
+    
+    "GeotechnicsHeader2" : "Geotechnical Site Evaluation Services",
+    "GeotechnicsArticle2-1": "In the realm of earthmoving and foundation engineering, we handle all classical consulting tasks and provide startup advice for various types of building structures. We commence with a construction site survey to determine essential data for soil mechanics in our dedicated testing laboratory, adhering to DIN standards. These tests can be customized to address specific challenges, ensuring the foundation design meets robust requirements.",
+    "GeotechnicsArticle2-2": "Furthermore, Suchman Consulting offers consulting support during technical construction management, particularly in the acceptance phase of the construction site. We respond swiftly to any planning changes and address foundation modifications needed during construction.",
+  
+    "GeotechnicsHeader3" : "Our Services Include:",
+    "GeotechnicsArticle3-1":"Subsoil surveys & evaluation",
+    "GeotechnicsArticle3-2": "Construction site consulting and startup advice",
+    "GeotechnicsArticle3-3": "Geotechnical monitoring",
+    "GeotechnicsArticle3-4": "Acceptance testing",
+    "GeotechnicsArticle3-5": "Analysis of structural damage",
+    
+    "GeotechnicsHeader4": "Mining Studies & Site Assessment",
+    "GeotechnicsArticle4-1":"Optimal mine design relies on accurate geotechnical assessments, keeping mining projects on course, avoiding delays, and minimizing costs. Our team of geologists and engineers employs customized software applications based on FLAC for precise and reliable geotechnical data, both for underground and surface mining endeavors.",
+   
+    "GeotechnicsHeader5" : "Our expertise spans the planning of:",
+    "GeotechnicsArticle5-1": "Slope design for open pits",
+    "GeotechnicsArticle5-2": "Headings, roadways, and drifts for underground operations",
+    "GeotechnicsArticle5-3": "Panel and longwall design",
+    "GeotechnicsArticle5-4": "Tailing dam design",
+    "GeotechnicsArticle5-5": "Special constructions",
+
+    "GeotechnicsHeader6" : "Reutilization of Former Industrial Sites",
+    "GeotechnicsArticle6-1": "Revitalizing former industrial sites for new purposes requires meticulous mine surveying and geotechnical expertise to address remediation needs. Our focus is on ensuring the long-term stability of surface areas in accordance with the new utilization concept and without adverse effects on the surrounding environment. Suchman Consulting supports your project from initial ideation to construction monitoring.",
+    "GeotechnicsArticle6-2": "Our services encompass utilization research, investigation of contaminated sites, assessment of existing structures, and the development of feasible remediation plans. Additionally, we provide site management and project management experts during project execution, safeguarding your financial and quality interests.",
+
+
+
+    "about1": "Searching for high-resolution aerospace images in the research area and deciphering them (probable separation of archaeological zones)",
+    "about2": "GPS of archaeological objects during field reconnaissance Marking with coordinates.",
+    "about3": "Creating a GIS project and integrating existing spatial data",
+    "about4": "Based on the results of aerial and field-archaeological reconnaissance, Preparation of large and medium-scale thematic maps.",
+    "about5": "Aerial photogrammetric surveying using GPS points gives us 2 different products: orthophoto and relief surface Digital model. Resolution depends on shooting height and It varies within 1 - 20 cm. Geographical accuracy is absolute in coordinates < 0.5 m.",
+    "about6": "Multispectral aerial photography of the infrared range sensor additionally. Different types of pseudo-color images are obtained and Different types of indices (eg vegetation index).",
+    "about7": "Archaeological supervision during the construction period.",
+    "about8": "Photogrammetric 3D fixation of the archaeological excavation site By shooting in the field, detailed 3D models, plans and cuts by building"
 }

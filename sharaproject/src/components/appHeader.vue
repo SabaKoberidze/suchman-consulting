@@ -6,6 +6,7 @@
   <div class="routes" v-if="!isMobile">
     <router-link class="routes__home" to="/">{{$t('Home')}}</router-link>
     <router-link class="routes__services" to="/services">{{$t('Services')}}</router-link>
+    <router-link class="routes__about" to="/about">{{$t('About')}}</router-link>
     <router-link class="routes__contact" to="/contact">{{$t('Contact')}}</router-link>
     <div class="routes__flag">
       <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'GE'" src="../assets/images/flags/georgia.svg"/>
@@ -25,6 +26,7 @@
     <div class="burger__menu" v-show="menuOpen">
       <router-link class="routes__home" to="/">{{$t('Home')}}</router-link>
       <router-link class="routes__services" to="/services">{{$t('Services')}}</router-link>
+      <router-link class="routes__about" to="/about">{{$t('About')}}</router-link>
       <router-link class="routes__contact" to="/contact">{{$t('Contact')}}</router-link>
       <div class="burger__flag" @click="showFlagsMobile = !showFlagsMobile">
         <img @click="flagsAreVisible = !flagsAreVisible" v-if="settingsStore.locale === 'GE'" src="../assets/images/flags/georgia.svg"/>
@@ -90,7 +92,7 @@ function showBurgerDropdown(){
     opacity: 0;
   }
   header{
-    z-index: 2;
+    z-index: 5;
     position: sticky;
     top: 0;
     width: 100%;

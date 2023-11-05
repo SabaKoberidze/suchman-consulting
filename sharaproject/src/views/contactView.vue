@@ -4,7 +4,7 @@
             <div id="mobileContact" @click = "contactClicked(0)" ref="mobileContact">
                 <div>
                     <img/>
-                    <p>ტელ:</p>
+                    <p>{{$t('mobile')}}</p>
                 </div>
                 <p class="copied" :class="{success: successM}">Copied to clipboard</p>
                 <p>+995 577 725 551</p>
@@ -12,7 +12,7 @@
             <div id="emailContact" @click = "contactClicked(1)" ref="emailContact">
                 <div>
                     <img/>
-                    <p>ელ ფოსტა:</p>
+                    <p>{{$t('email')}}</p>
                 </div>
                 <p class="copied" :class="{success: successE}">Copied to clipboard</p>
                 <a>info@smcgeo.org</a>
@@ -77,6 +77,9 @@ import { ref } from 'vue';
                 position: absolute;
             }
             & > div{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
                 p{
                     font-weight: bold;
                 }

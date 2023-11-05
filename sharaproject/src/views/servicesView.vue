@@ -81,11 +81,15 @@
 <style lang="scss" scoped>
 .navContainer{
     position: relative;
+    position: sticky;
+    top: 80px;
+    z-index: 2;
     .navigation{    
         display: flex;
         width: 100%;  
         align-items: center;
         margin-top: 10px;
+      
         .scrollable {
             margin-top: 0px;
             justify-content: space-between;
@@ -142,9 +146,9 @@
             @media (min-width: 850px) {
                 width: auto;
                 flex-grow: 1;
-                border-radius: 0px;
+                border-radius: 5px;
             }
-            background: rgba(255, 255, 255, 0.849);
+            background: rgba(255, 255, 255, 0.925);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -158,7 +162,7 @@
                 }
             }
             &.active{
-                background: rgba(0, 51, 153, 0.5764705882);
+                background: rgba(0, 51, 153, 0.76);
                 p{
                     color: white;
                 }
@@ -204,7 +208,7 @@ article{
                 text-shadow: 0px 0px 10px black;
                 z-index: 1;       
                     @media (max-width: 700px){
-                        font-size: 12vw;
+                        font-size: 10vw;
                     }
                 }
                 img{

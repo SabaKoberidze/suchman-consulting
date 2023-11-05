@@ -9,9 +9,12 @@
 </template>
 
 <script setup lang="ts" >
+import { onMounted } from 'vue';
 import appHeader from './components/appHeader.vue';
 
+onMounted(() => {
 
+})
 </script>
 
 <style scoped lang="scss">
