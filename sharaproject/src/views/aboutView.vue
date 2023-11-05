@@ -1,13 +1,10 @@
 <template>
     <div>
-        <p>{{$t('about1')}}</p>
+        <p class="headerText">{{$t('about1')}}</p>
         <p>{{$t('about2')}}</p>
         <p>{{$t('about3')}}</p>
         <p>{{$t('about4')}}</p>
         <p>{{$t('about5')}}</p>
-        <p>{{$t('about6')}}</p>
-        <p>{{$t('about7')}}</p>
-        <p>{{$t('about8')}}</p>
     </div>
 </template>
 <script lang="ts" setup>
@@ -22,6 +19,10 @@
         p{
             font-size: 20px;
             color: white;
+        }
+        .headerText{
+            font-weight: bold;
+            font-size: 24px;
         }
     }
 </style>

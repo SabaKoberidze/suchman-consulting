@@ -109,7 +109,7 @@
     "GeodesicArticle1-10": "Development of detailed Digital Terrain Model for engineering purposes",
     "GeodesicArticle1-11": "All types of engineering and survey work for construction in progress or after completion of construction",
     "GeodesicArticle1-12": "Development of commasative works and transfer to the field",
-    "GeodesicArticle1-13": "of the Earth's surface and its gravitational field. It involves the precise determination of positions, distances, and angles on the Earth's surface, as well as the study of the Earth's shape, orientation, and gravitational field variations over time.",
+    "GeodesicArticle1-13": "Geodetic studies of the Earth's surface and its gravitational field. It involves the precise determination of positions, distances, and angles on the Earth's surface, as well as the study of the Earth's shape, orientation, and gravitational field variations over time.",
     "GeodesicArticle1-14": "Geodesy plays a crucial role in various applications, including navigation systems (such as GPS), land surveying, mapping, satellite positioning, and in understanding processes like tectonic plate movements and sea-level changes. It provides the foundation for creating accurate maps and charts, as well as for activities like construction, urban planning, and scientific research.",
     
     
@@ -156,12 +156,9 @@
 
 
 
-    "about1": "Searching for high-resolution aerospace images in the research area and deciphering them (probable separation of archaeological zones)",
-    "about2": "GPS of archaeological objects during field reconnaissance Marking with coordinates.",
-    "about3": "Creating a GIS project and integrating existing spatial data",
-    "about4": "Based on the results of aerial and field-archaeological reconnaissance, Preparation of large and medium-scale thematic maps.",
-    "about5": "Aerial photogrammetric surveying using GPS points gives us 2 different products: orthophoto and relief surface Digital model. Resolution depends on shooting height and It varies within 1 - 20 cm. Geographical accuracy is absolute in coordinates < 0.5 m.",
-    "about6": "Multispectral aerial photography of the infrared range sensor additionally. Different types of pseudo-color images are obtained and Different types of indices (eg vegetation index).",
-    "about7": "Archaeological supervision during the construction period.",
-    "about8": "Photogrammetric 3D fixation of the archaeological excavation site By shooting in the field, detailed 3D models, plans and cuts by building"
+    "about1": "Who We Are",
+    "about2": "We Suchman consulting are your trusted partners in delivering modern solutions and ensuring excellence in every project we undertake. With a passion for innovation and a commitment to providing high-class international standard services, we have established ourselves as a leading force in the fields of geophysical surveys, geology, geotechnics, underground utility mapping, aerial photography, LiDAR, bathymetry, and a diverse array of other solutions.We are based in Georgia and we are the leading force in Caucasian region.",
+    "about3": "One of our proudest achievements is the Vashlijvari Landslide Stabilization Project. This project not only showcased our expertise but also marked a milestone in Georgia's engineering and construction industry, as it was the first time in the country's history that work was conducted according to Eurocode 7, reflecting our commitment to international standards and best practices.",
+    "about4": "At Suchman Consulting, we're dedicated to making your projects a success. When you choose us, you're partnering with a team that combines experience, innovation, and a strong focus on quality. We serve as your safety net to ensure your project's success and that you avoid unnecessary expenses.",
+    "about5": "We're excited to work with you on your next project.Get in touch with us today to see how our wide range of services can turn your ideas into reality and take your projects to new heights."
 }
