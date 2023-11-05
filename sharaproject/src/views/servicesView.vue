@@ -23,8 +23,7 @@
                     </div>
             </template>
         </article>
-    </div>
-        
+    </div>      
 </template>
 <script lang="ts" setup>
     import { services } from "../stores/services";
@@ -167,12 +166,17 @@
                     color: white;
                 }
             }
+         
             &:hover{
-                background: rgba(0, 51, 153, 0.5764705882);
-                p{
-                    color: white;
+                @media (min-width:800px) {
+                    background: rgba(0, 51, 153, 0.5764705882);
+                    p{
+                        color: white;
+                    }
                 }
             }
+            
+            
         }
     }
 }
@@ -186,9 +190,9 @@ article{
             flex-direction: column;
         }
         .title{
-            font-size: 21px;    
+            font-size: 30px;    
             @media (max-width: 700px){
-                font-size: 18px;  
+                font-size: 24px;  
             }     
         }
         .texts{
@@ -196,14 +200,14 @@ article{
                margin-top: 10px;
                margin-bottom: 10px;
                width: 100%;
-               height: 40vh;
+               height: 50vh;
                position: relative;
                display: flex;
                justify-content: center;
                align-items: center;
                overflow: hidden;
                .mainText{
-                font-size: 100px;
+                font-size: 80px;
                 font-weight: 600; 
                 text-shadow: 0px 0px 10px black;
                 z-index: 1;       
@@ -239,6 +243,10 @@ article{
                 width: 100%;
                 .description{ 
                     opacity: 0.75;
+                    font-size: 26px;
+                    @media (max-width: 700px){
+                        font-size: 23px;
+                    }
                     &.bulleted{
                         display: list-item;        
                         list-style-type: circle;    

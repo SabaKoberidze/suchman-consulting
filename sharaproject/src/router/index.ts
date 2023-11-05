@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory('/'),
   linkActiveClass: "active-link",
   linkExactActiveClass: "exact-active-link",
   scrollBehavior() {

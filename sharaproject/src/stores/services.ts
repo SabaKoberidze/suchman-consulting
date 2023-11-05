@@ -199,6 +199,7 @@ export const services = defineStore("services", {
           bullets: [true],           
           headers: [''],
           articles:[[
+            $t('ArcheologyArticle1-1'),
             $t('ArcheologyArticle1-2'),
             $t('ArcheologyArticle1-3'),
             $t('ArcheologyArticle1-4'),
@@ -409,6 +410,7 @@ export const services = defineStore("services", {
               bullets: [true],           
               headers: [''],
               articles:[[
+                $t('ArcheologyArticle1-1'),
                 $t('ArcheologyArticle1-2'),
                 $t('ArcheologyArticle1-3'),
                 $t('ArcheologyArticle1-4'),

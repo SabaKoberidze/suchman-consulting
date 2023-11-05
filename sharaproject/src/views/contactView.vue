@@ -22,7 +22,7 @@
                     <img/>
                     <p>facebook:</p>
                 </div>
-                <a>fb.com/suchman_consulting</a>
+                <a>facebook.com/profile.php?id=100086942021704</a>
             </div>
         </div>
         <div class="map">

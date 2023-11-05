@@ -58,7 +58,7 @@ let windowWidth:Ref<number> = ref(innerWidth)
 let menuOpen:Ref<boolean> = ref(false)
 const router = useRouter()
 const isMobile = computed(() => {
-    return windowWidth.value <= 700
+    return windowWidth.value <= 800
 })
 function goToHome(): void{
   router.push('/')
@@ -124,7 +124,7 @@ function showBurgerDropdown(){
         align-items: center;
         justify-content: center;
         width: fit-content;
-        width: 100px;
+        width: 120px;
         height: 100%;
         transition: 200ms;
         color: white;
