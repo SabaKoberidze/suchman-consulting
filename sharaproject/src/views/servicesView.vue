@@ -62,7 +62,7 @@
         leftFade.value = false
         rightFade.value = true
       }
-      else if(scrollPositionLeft === maxScroll){
+      else if(Number(scrollPositionLeft.toFixed(0)) === Number(maxScroll.toFixed(0))){
         leftFade.value = true
         rightFade.value = false
       }
