@@ -33,7 +33,6 @@
     const leftFade = ref(false);
     const rightFade = ref(false);
     const servicesStore = services();
-    const navContainer = ref(null);
     const navContent:Ref = ref(null);
     const scrollable:Ref = ref(null);
     pickedService.value = servicesStore.pageindex
@@ -80,7 +79,8 @@
 </script>
 <style lang="scss" scoped>
 .navContainer{
-    position: relative;
+    width: 100vw;
+    overflow: hidden;
     position: sticky;
     top: 80px;
     z-index: 2;
