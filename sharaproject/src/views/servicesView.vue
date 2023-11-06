@@ -105,26 +105,21 @@
             display: none;
         }
         &.leftFade,&.rightFade{
-            &::before{
+            &::before,&::after{
                 content: "";
                 pointer-events: none;
                 position: absolute;
-                top: 0;
-                width: 50px;
-                height: 100%;
-                right: -50px;
+                bottom: 0;
+                width: 60px;
+                height: 40px;
                 transition: 200ms;
+            }
+            &::before{
+                right: -50px;
                 background: linear-gradient(to right, transparent 0%, black 100%);
             }
-            &::after{
-                content: "";
-                pointer-events: none;
-                position: absolute;
-                top: 0;
-                width: 50px;
-                height: 100%;
+            &::after{          
                 left: -50px;
-                transition: 200ms;
                 background: linear-gradient(to left, transparent 0%, black 100%);
             }
         }
