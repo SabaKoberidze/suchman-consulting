@@ -239,9 +239,9 @@ article{
                 width: 100%;
                 .description{ 
                     opacity: 0.75;
-                    font-size: 26px;
+                    font-size: 20px;
                     @media (max-width: 700px){
-                        font-size: 23px;
+                        font-size: 21px;
                     }
                     &.bulleted{
                         display: list-item;        
