@@ -15,7 +15,7 @@
                     <p>{{$t('email')}}</p>
                 </div>
                 <p class="copied" :class="{success: successE}">Copied to clipboard</p>
-                <a>info@smcgeo.org</a>
+                <a>guram.sharashenidze@smcgeo.org</a>
             </div>
             <div id="socialMediaContact" @click = "contactClicked(2)">
                 <div>
@@ -48,7 +48,7 @@ import { ref } from 'vue';
                 setTimeout(()=>{
                     successE.value = false
                 }, 500)
-                navigator.clipboard.writeText("info@smcgeo.org");
+                navigator.clipboard.writeText("guram.sharashenidze@smcgeo.org");
                 break;
             case 2:
                 window.location.href = 'https://www.facebook.com/profile.php?id=100086942021704'
